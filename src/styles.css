@@ -105,23 +105,29 @@ header > #logo {
 #hero{
     --border-radius:2rem;
 
-    width: 80%;
+    width: clamp(500px, 1000px, 80%);
 
     background-color: rgba(0, 0, 0, .5);
     color:white;
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: var(--border-radius);
 
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
+
+    align-items: center;
+
+    margin-bottom: 2rem;
 }
 
 #hero #background{
+    --background-border-radius: calc(var(--border-radius) / 2);
+
     background-image: url("./img/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    border-radius: var(--background-border-radius) 0 0 var(--background-border-radius);
 
     height: 300px;
 }
@@ -151,4 +157,39 @@ header > #logo {
 #hero button:hover{
     background-color: white;
     color: black;
+}
+
+#hero.menu{
+    width: clamp(100px, 600px, 80%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+#hero.menu .menu-list{    
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto;
+}
+
+#hero.menu p{
+    border-bottom: 2px solid white;
+    padding: 1rem;
+}
+
+#hero.menu p:nth-last-child(-n+3){
+    border: 0;
+}
+
+#hero.about{
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
 }
