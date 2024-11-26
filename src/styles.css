@@ -1,3 +1,154 @@
-h1{
-    background-color: green;
+@font-face {
+    font-family: "norse";
+    src: url("./fonts/Nord-Bold.otf");
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, button{
+    font-family: norse;
+}
+
+button{
+    cursor: pointer;
+}
+
+:root{
+    --nav-height:100px;
+    --logo-size: 100px;
+
+    --primary-color: rgb(162, 22, 22);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--primary-color);
+}
+
+header{
+    width: 100%;
+    background-color:black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav{
+    background-color: black;
+
+    margin-left: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav #header-buttons{
+    flex-shrink: 0;
+    justify-content: flex-end;
+}
+
+nav button{
+    background-color: black;
+    border: 0;
+    color:white;
+
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+nav button:hover{
+    background-color: color-mix(in srgb, black 80%, white 20%);
+}
+
+header > #logo {
+    position: absolute;
+    background-image: url("./img/logo.png");
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: 50%;
+
+    background-color: black;
+    top: 0px;
+    border-radius: 0 0 999rem 999rem;
+    height: var(--logo-size);
+    width: var(--logo-size);
+    padding: 1rem;
+}
+
+#header-buttons button{
+    padding: 1rem 2rem;
+}
+
+#content{
+    width: 100%;
+
+    padding-top: calc(var(--logo-size) / 2 + 2rem);
+    background-color: var(--primary-color);    
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#hero{
+    --border-radius:2rem;
+
+    width: 80%;
+
+    background-color: rgba(0, 0, 0, .5);
+    color:white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+}
+
+#hero #background{
+    background-image: url("./img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+
+    height: 300px;
+}
+
+#hero #text{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+#text span{
+    font-family: norse;
+}
+
+#hero button{
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+
+    color:white;
+
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+#hero button:hover{
+    background-color: white;
+    color: black;
 }
